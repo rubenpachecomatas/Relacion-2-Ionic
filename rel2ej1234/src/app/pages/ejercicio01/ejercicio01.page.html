@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Ejercicio 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label position="floating">Valor mínimo</ion-label>
+    <ion-input clearInput [(ngModel)]="a"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Valor máximo</ion-label>
+    <ion-input clearInput [(ngModel)]="b"></ion-input>
+  </ion-item>
+
+  <ion-button
+    *ngIf="a <= b"
+    (click)="generateNumber()"
+    size="large"
+    expand="full">
+    Genera número
+  </ion-button>
+      
+  <h1 (click)="clickNumber()" text-center>{{ randomNumber }}</h1>
+</ion-content>

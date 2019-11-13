@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ejercicio 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<ion-item>
+    <ion-label>Pulgadas</ion-label>
+    <ion-input clearInput [(ngModel)]="pulgadas" (keyup)="updateConverter()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Centímetros</ion-label>
+    <ion-input clearInput [(ngModel)]="centimetros" (keyup)="updateConverter()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Metros</ion-label>
+    <ion-input clearInput [(ngModel)]="metros"></ion-input>
+  </ion-item>-->
+
+  <ion-label>Converter</ion-label>
+  <ion-input type="number" [(ngModel)]="numero" placeholder="Número a convertir"></ion-input>
+  <ion-select [(ngModel)]="unidad" placeholder="Selecciona que unidad quieres convertir:">
+    <ion-select-option value="pulgadas">Pulgadas</ion-select-option>
+    <ion-select-option value="centimetros">Centimetros</ion-select-option>
+    <ion-select-option value="metros">Metros</ion-select-option>
+  </ion-select>
+  <ion-button (click)="convert()" color="primary">Convert</ion-button>
+  <ion-item-divider></ion-item-divider>
+  <h3 *ngIf="unidad != 'pulgadas' && comprob == true">Pulgadas = {{pulgadas}}</h3>
+  <h3 *ngIf="unidad != 'centimetros' && comprob == true">Centímetros = {{centimetros}}</h3>
+  <h3 *ngIf="unidad != 'metros' && comprob == true">Metros = {{metros}}</h3>
+
+</ion-content>
