@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Películas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let m of peliculas">
+      <ion-card>
+        <ion-card-header>
+          <img src="/assets/imagenes/{{m.cover}}" width="100" (click)="details(m.title)">
+          <ion-card-title (click)="details(m.title)">{{m.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="m.title == comprob">
+          <h3>{{m.score}}</h3>
+          <h3>{{m.release}}</h3>
+          <h3>{{m.synopsis}}</h3>
+          <ion-icon
+          (click)="presentAlertConfirm(m.title)"
+          name="trash" style="font-size: 2em;"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
